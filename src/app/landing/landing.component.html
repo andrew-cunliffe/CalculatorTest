@@ -1,0 +1,10 @@
+<form [formGroup]="dialogForm" (submit)="openDialog()">
+    <label>Choose a theme</label>
+    <mat-radio-group class="radio-group" formControlName="theme">
+        <mat-radio-button *ngFor="let color of colors" [value]="color.value">
+            {{ color.label }}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <button type="submit" mat-flat-button color="primary">Show Calculator</button>
+</form>

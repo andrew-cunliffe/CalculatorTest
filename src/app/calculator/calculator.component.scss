@@ -1,0 +1,49 @@
+@use '@angular/material' as mat;
+
+@mixin theme($palette) {
+    $colour: mat.define-palette($palette, 700);
+
+    $theme: mat.define-light-theme(
+        (
+            color: (
+                primary: $colour,
+                accent: $colour,
+                warn: $colour,
+            ),
+        )
+    );
+    @include mat.button-theme($theme);
+}
+
+.red {
+    @include theme(mat.$red-palette);
+}
+
+.green {
+    @include theme(mat.$green-palette);
+}
+
+.blue {
+    @include theme(mat.$blue-palette);
+}
+
+.arithmetic {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+    min-height: 2em;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
+
+    button {
+        min-width: auto;
+    }
+}

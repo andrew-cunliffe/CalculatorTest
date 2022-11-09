@@ -1,0 +1,15 @@
+:host {
+    display: block;
+}
+
+.layout {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    justify-items: center;
+    min-height: 100vh;
+
+    header,
+    footer {
+        padding: 1em;
+    }
+}
